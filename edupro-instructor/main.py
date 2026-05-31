@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+import os
 
 st.set_page_config(
     page_title="EduPro Instructor Performance Dashboard",
@@ -13,7 +14,10 @@ st.write("Interactive dashboard for evaluating instructor performance and course
 # Load Data
 @st.cache_data
 def load_data():
-    file = "EduPro Online Platform (2).xlsx"
+   file = os.path.join(
+    os.path.dirname(__file__),
+    "EduPro Online Platform (2).xlsx"
+)
 
     users = pd.read_excel(file, sheet_name="Users")
     teachers = pd.read_excel(file, sheet_name="Teachers")
