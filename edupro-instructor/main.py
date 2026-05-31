@@ -14,10 +14,10 @@ st.write("Interactive dashboard for evaluating instructor performance and course
 # Load Data
 @st.cache_data
 def load_data():
-   file = os.path.join(
-    os.path.dirname(__file__),
-    "EduPro Online Platform (2).xlsx"
-)
+    file = os.path.join(
+        os.path.dirname(__file__),
+        "EduPro Online Platform (2).xlsx"
+    )
 
     users = pd.read_excel(file, sheet_name="Users")
     teachers = pd.read_excel(file, sheet_name="Teachers")
@@ -25,7 +25,6 @@ def load_data():
     transactions = pd.read_excel(file, sheet_name="Transactions")
 
     return users, teachers, courses, transactions
-
 users, teachers, courses, transactions = load_data()
 
 # Sidebar
